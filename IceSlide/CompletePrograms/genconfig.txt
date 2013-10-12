@@ -1,0 +1,14 @@
+gridwidth = 10
+gridlines = 8
+
+blockratio = 0.1
+minsteps = 15
+minjump = 30
+
+trapallowed = 0
+
+maxloops = 100
+maxretries = 1000000
+
+filestogenerate = 10
+filename = zmaze

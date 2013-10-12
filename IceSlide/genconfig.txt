@@ -1,0 +1,14 @@
+gridwidth = 20
+gridlines = 15
+
+blockratio = 0.15
+minsteps = 25
+minjump = 22.5
+
+trapallowed = 0
+
+maxloops = 100
+maxretries = 100000
+
+filestogenerate = 5
+filename = maze

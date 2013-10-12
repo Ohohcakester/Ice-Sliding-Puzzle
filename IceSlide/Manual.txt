@@ -1,0 +1,116 @@
+Ice Slide Puzzles
+=How to Use=
+
+
+PART 1
+>> Ice Slide Generator <<
+
+Description: Used to mass produce mazes based on certain requirements.
+
+
+1) Open the program once and it will generate a config file for you to edit parameters.
+This file is named genconfig.txt
+
+2) Edit the parameters in genconfig.txt to your preferences and run the generator program to mass-produce mazes.
+
+((Parameters))
+gridwidth = number of columns (x axis width)
+gridlines = number of rows (y axis height)
+
+blockratio = the approximate ratio of the number of blocks to the map size.
+	(e.g. a blockratio of 0.3 in a 10x10 maze means about 30 blocks)
+
+minsteps = the minimum amount of steps required to solve the puzzle.
+	(e.g. if minsteps = 25, it will only generate puzzles which require 25 steps or more to solve)
+
+minjump = jump is a measure of the difficulty. Puzzles with higher jump tend to be more difficult.
+	(it is related to how much further or nearer to the finish you will be if you take a random step)
+
+trapallowed = 0 means mazes where you can get trapped are not allowed. 1 means it's ok.
+
+
+maxloops = the number of iterations (modifications) of the maze to try to get it to suit the conditions before discarding
+	(best to leave it as 100)
+
+maxretries = the number of times the program will try again by generating a new maze.
+	(best to leave it as 100000 or 10000000)
+
+filestogenerate = For mass production. The program generates the number of mazes stated here.
+
+filename = name the file how you want.
+	(if filename = maze, then files will be named maze1.txt, maze2.txt, maze3.txt etc)
+
+
+
+
+
+
+
+PART 2
+>> Ice Slide Solver <<
+
+Description: Solves a maze for you and prints a nodemap.
+
+
+1) Open the program. It will prompt you to type a filename. Enter the name (without the .txt extension) of the maze file.
+
+After that, these information will be presented to you:
+
+MAP SIZE - self-explanatory (x,y)
+STARTPOINT - Location of start point. top left corner is (0,0)
+ENDPOINT - Location of goal. top left corner is (0,0)
+
+SOLUTION STEPS - the minimum amount of steps required to solve the puzzle (fastest solution)
+TRAPS EXIST - 1 means it's possible to get trapped in the maze, requiring a reset if it happens.
+NET JUMP - a parameter describing the difficulty of the maze. explained in part 1.
+
+Finally, a node map will be drawn.
+ # signs are blocks.
+ Everything else is a space.
+
+ Each position you can reach is labelled with a number or letter. This shows the number of steps required to get to the goal from that position.
+ e.g. 6 means you need 6 steps to reach the finish from there.
+ 0 is obviously the finish point.
+ ABCDEFG etc represents 10 and above, with A=10, B=11 and so on.
+
+ ! means a trap point. if you reach a node marked !, you cannot reach the goal any more.
+
+ The start point is not labelled. Look at the coordinates.
+
+
+Alternatively, you can read the text file yourself.
+FONT: SYSTEM
+0 -> block
+_ -> space
++ -> start point
+= -> finish
+
+
+
+
+
+
+
+
+PART 3
+>> Ice Slide Player <<
+
+Description: Allows you to play the mazes
+
+
+1) Enter the filename of the maze you want (without the .txt)
+
+2) The maze will be loaded.
+
+P = player position
+X = finish point
+# = block
+
+
+Controls: (type the letter and press enter)
+w,a,s,d = directional movement
+q = quit maze (and load a new one)
+r = reset
+
+You will be praised for completing the puzzle in the minimum amount of steps.
+
